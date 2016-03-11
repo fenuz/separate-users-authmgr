@@ -11,6 +11,6 @@ Author URI: http://github.com/fenuz
 
 yourls_add_filter('separate_users_is_admin_user_filter', 'separate_users_authmgr_is_admin_filter');
 function separate_users_authmgr_is_admin_filter($is_admin, $user) {
-    return authmgr_user_has_role( $user, AuthmgrRoles::Administrator );
+    return authmgr_user_has_role( $user, AuthmgrRoles::Administrator ) || authmgr_user_has_role( $user, AuthmgrRoles::ShortAdministrator );
 }
 
